@@ -28,3 +28,7 @@ An app to collect stock trade data from various api sources.
 * Reference: https://medium.com/@litvinjuan/how-to-fix-target-class-does-not-exist-in-laravel-8-f9e28b79f8b4
 
 * Use full namespace in `routes\web.php` and `routes\api.php`, e.g. `Route::get('/', 'App\Http\Controllers\StockController@index');` instead of `Route::get('/', 'StockController@index');`
+
+### Laravel 8 control structure, e.g. IF directive
+
+* Reference: https://www.youtube.com/watch?v=wFvyjwRPaUE

@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'App\Http\Controllers\StockController@index');
+// Alternative: Route::get('/', [App\Http\Controllers\StockController::class, 'index']);
