@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Api endpoints below can be disable for production build
+Route::get('stock-price/{stock}', 'App\Http\Controllers\StockPriceController@show');

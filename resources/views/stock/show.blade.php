@@ -45,7 +45,7 @@ th:first-letter {
         },
         mounted() {
             // Fetch stock prices
-            fetch('/stock-price/{{ $item->symbol }}')
+            fetch('/api/stock-price/{{ $item->symbol }}')
                 .then(response => response.json())
                 .then(json => {
                     this.labels = Object.keys(json[0])

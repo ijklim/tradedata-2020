@@ -191,32 +191,43 @@ class StockController extends Controller
         $scanResults = scandir($importFolder);
         $newFilePrefix = (new \DateTime())->format("Ymd") . '__';
 
-        function isNotStock($symbol) {
+        function isNotStock($symbol)
+        {
             return strlen($symbol) > 4;
         }
 
-        function isNewStock($symbol) {
-            return !(\App\Stock::find($symbol));
+        function isNewStock($symbol)
+        {
+            return !(\App\Models\Stock::find($symbol));
         }
 
-        foreach ($scanResults as $scanResult):
-            if ($scanResult === 'optionable--example.csv') continue;
-            if (!preg_match('/(^optionable--)(.)+(.csv$)/', $scanResult)) continue;
+        foreach ($scanResults as $scanResult) :
+            if ($scanResult === 'optionable--example.csv') {
+                continue;
+            }
+            if (!preg_match('/(^optionable--)(.)+(.csv$)/', $scanResult))
+            {
+                continue;
+            }
 
             // Attempt to open csv file
-            if (($handle = fopen($importFolder . '/' . $scanResult, "r")) === FALSE) continue;
+            if (($handle = fopen($importFolder . '/' . $scanResult, "r")) === FALSE) {
+                continue;
+            }
 
             $A = ord('A');
             $columnSymbol = ord('A') - $A;
             $columnName = ord('C') - $A;
             $stockController = new \App\Http\Controllers\StockController(
-                new \App\Stock()
+                new \App\Models\Stock()
             );
 
             // Iterate through each row in file
-            while (($row = fgetcsv($handle)) !== FALSE) {
+            while (($row = fgetcsv($handle)) !== false) {
                 $symbol = $row[$columnSymbol];
-                if (isNotStock($symbol) || !isNewStock($symbol)) continue;
+                if (isNotStock($symbol) || !isNewStock($symbol)) {
+                    continue;
+                }
 
                 $data = [
                     'symbol' => $symbol,
@@ -228,7 +239,9 @@ class StockController extends Controller
                 echo "New stock added: $symbol\n";
             }
 
-            while (is_resource($handle)) fclose($handle);
+            while (is_resource($handle)) {
+                fclose($handle);
+            }
 
             rename(
                 $importFolder . '/' . $scanResult,

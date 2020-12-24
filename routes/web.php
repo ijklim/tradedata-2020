@@ -18,3 +18,11 @@ Route::get('/', 'App\Http\Controllers\StockController@index');
 
 Route::resource('stock', App\Http\Controllers\StockController::class);
 Route::resource('data-source', App\Http\Controllers\DataSourceController::class);
+
+Route::resource(
+    'stock-option',
+    App\Http\Controllers\StockOptionController::class,
+    [
+        'only' => ['index']
+    ]
+);

@@ -125,7 +125,7 @@ class DataSourceController extends Controller
      * .
      *
      * @param  \App\Models\DataSource  $dataSource
-     * @param  \App\Stock  $stock
+     * @param  \App\Models\Stock  $stock
      * @return string
      */
     private function apiUrl(DataSource $dataSource, Stock $stock, $startDate, $endDate)
@@ -156,7 +156,7 @@ class DataSourceController extends Controller
     {
         $noOfNewRecords = 0;
         $stockPriceController = new \App\Http\Controllers\StockPriceController(
-            new \App\StockPrice()
+            new \App\Models\StockPrice()
         );
         switch ($dataSource->domain_name) {
             case 'barchart.com':

@@ -32,6 +32,6 @@ class StockOption extends Model
 
     public function stock()
     {
-        return $this->belongsTo(\App\Stock::class, 'symbol');
+        return $this->belongsTo(\App\Models\Stock::class, 'symbol');
     }
 }
