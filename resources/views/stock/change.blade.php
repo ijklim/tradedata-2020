@@ -14,7 +14,7 @@
                         'method' => ($mode == 'create' ? 'post' : 'put')
                     ]);
                         echo Form::bootstrapText(
-                            'symbol', 
+                            'symbol',
                             $mode == 'edit' ? $item->getKeyValue() : null,
                             [
                                 'maxlength' => 5,
@@ -35,7 +35,7 @@
                             'data_source_id',
                             $mode == 'edit' ? $item->data_source_id : null,
                             'data_source',
-                            \App\DataSource::all()
+                            \App\Models\DataSource::all()
                         );
 
                         echo "<div class='form-group'>";
@@ -47,5 +47,5 @@
             </div>
         </div>
     </div>
-    
+
 @endsection

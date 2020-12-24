@@ -14,7 +14,7 @@ class DataSourceController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @param  \App\DataSource  $items
+     * @param  \App\Models\DataSource  $items
      * @return void
      */
     public function __construct(DataSource $items)
@@ -57,7 +57,7 @@ class DataSourceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\DataSource  $dataSource
+     * @param  \App\Models\DataSource  $dataSource
      * @return \Illuminate\Http\Response
      */
     public function show(DataSource $dataSource)
@@ -68,7 +68,7 @@ class DataSourceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\DataSource  $dataSource
+     * @param  \App\Models\DataSource  $dataSource
      * @return \Illuminate\Http\Response
      */
     public function edit(DataSource $dataSource)
@@ -83,7 +83,7 @@ class DataSourceController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\DataSource  $dataSource
+     * @param  \App\Models\DataSource  $dataSource
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, DataSource $dataSource)
@@ -107,7 +107,7 @@ class DataSourceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\DataSource  $dataSource
+     * @param  \App\Models\DataSource  $dataSource
      * @return \Illuminate\Http\Response
      */
     public function destroy(DataSource $dataSource)
@@ -124,7 +124,7 @@ class DataSourceController extends Controller
     /**
      * .
      *
-     * @param  \App\DataSource  $dataSource
+     * @param  \App\Models\DataSource  $dataSource
      * @param  \App\Stock  $stock
      * @return string
      */
