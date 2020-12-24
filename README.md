@@ -33,3 +33,13 @@ An app to collect stock trade data from various api sources.
 ### Laravel 8 control structure, e.g. IF directive
 
 * Reference: https://www.youtube.com/watch?v=wFvyjwRPaUE
+
+### Form class is not found
+
+* Run `composer require laravelcollective/html`
+
+### Method bootstrapText does not exist
+
+* Must define Form component in `app\Providers\AppServiceProvider.php`, e.g. `\Form::component('bootstrapText', 'components.form.text', ['name', 'value', 'attributes']);`
+
+* Corresponding file should be in `resources\views\components\form` e.g. `text.blade.php`

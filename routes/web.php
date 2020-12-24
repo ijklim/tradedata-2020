@@ -15,3 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\StockController@index');
 // Alternative: Route::get('/', [App\Http\Controllers\StockController::class, 'index']);
+
+Route::resource('stock', App\Http\Controllers\StockController::class);
+Route::resource('data-source', App\Http\Controllers\DataSourceController::class);
