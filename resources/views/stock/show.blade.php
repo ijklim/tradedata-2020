@@ -17,7 +17,9 @@ th:first-letter {
 @endsection
 
 @section('javascript')
-    Vue.component('stock-prices', {
+    const app = Vue.createApp({});
+
+    app.component('stock-prices', {
         template: `
             <table class='table table-striped table-bordered table-sm'>
                 <thead class='thead-dark'>
@@ -32,7 +34,7 @@ th:first-letter {
                         </td>
                     </tr>
                 </tbody>
-                
+
             </table>
         `,
         data() {
@@ -65,7 +67,5 @@ th:first-letter {
         }
     });
 
-    const app = new Vue({
-        el: '#app'
-    });
+    app.mount("#app");
 @endsection

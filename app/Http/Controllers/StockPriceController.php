@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\StockPrice;
+use App\Models\StockPrice;
 
 class StockPriceController extends Controller
 {
     use \App\Http\Controllers\Traits\Controller;
-    
+
     /**
      * Create a new controller instance.
      *
@@ -23,7 +23,7 @@ class StockPriceController extends Controller
         $this->uniqueFieldName = '';
 
     }
-    
+
     /**
      * Get rules for adding a new record or updating a record.
      *
@@ -50,7 +50,7 @@ class StockPriceController extends Controller
      * @param  Stock  $item
      * @return \Illuminate\Http\Response
      */
-    public function show(\App\Stock $stock)
+    public function show(\App\Models\Stock $stock)
     {
         $items = StockPrice::where('symbol', $stock->symbol)->get();
         return view(

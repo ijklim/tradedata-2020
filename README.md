@@ -5,7 +5,7 @@ An app to collect stock trade data from various api sources.
 ## Technologies used
 
 * Laravel 8.20.1
-* Vue.js
+* Vue.js 3.0.0
 * SQLite
 
 ## Installation
