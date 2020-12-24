@@ -15,6 +15,7 @@ An app to collect stock trade data from various api sources.
 * Run ```composer install```
 * If using sqlite (setting in `.env`), manually create a blank file `database\database.sqlite`
 * Run ```php artisan migrate```
+* Run ```yarn run dev``` to compile js and css
 
 
 ## Troubleshoot
